@@ -1,4 +1,27 @@
 == README
+24 Apr HH
+  1. created tag named v1.0 to represent the structrure as it was on 22 Apr and pushed to github
+
+  2. did bundle install to set up the environment
+
+  3. set up the User model using the command
+     rails generate scaffold User name:string user_id:string password:string admin:boolean
+
+  4. set up the database with data for User
+       a. rake db:create
+       b. rake db:migrate
+       c. put data into the db/seeds.rb to define 4 regular users: user_1 thru user_1 and 2 privileged users: priv_1 and priv_2.  Passwords are the same for all "password"
+       d. rake db:seed
+       e. validate the database using
+             rails dbconsole
+             select * from users;
+             .quit
+   5. validate all is OK using the web browser to go to localhost:3000 and getting the default rails screen
+
+   6. create the Sessions controller using the command
+       rails generate controller Sessions new create destroy
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
