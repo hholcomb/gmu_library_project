@@ -1,4 +1,6 @@
 Library::Application.routes.draw do
+  resources :books
+
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"

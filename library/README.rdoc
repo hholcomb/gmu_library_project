@@ -21,6 +21,13 @@
    6. create the Sessions controller using the command
        rails generate controller Sessions new create destroy
 
+    7. create the Book model using the command
+       rails generate scaffold Book isbn:string title:string author:string genre:string abstract:text pages:integer image_cover_url:string published_on:date total_in_library:integer 
+
+       this provides a way to get to the books index page at logon
+       
+           
+
 
 
 This README would normally document whatever steps are necessary to get the
