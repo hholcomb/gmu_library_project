@@ -25,7 +25,10 @@
        rails generate scaffold Book isbn:string title:string author:string genre:string abstract:text pages:integer image_cover_url:string published_on:date total_in_library:integer 
 
        this provides a way to get to the books index page at logon
+
+       run rake db:migrate
        
+    8. can test out the login function from localhost:3000/login
            
 
 
