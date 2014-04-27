@@ -1,6 +1,6 @@
 == README
-24 Apr HH
-  1. created tag named v1.0 to represent the structrure as it was on 22 Apr and pushed to github
+
+  1. 24 Apr (HH) - created tag named v1.0 to represent the structrure as it was on 22 Apr and pushed to github
 
   2. did bundle install to set up the environment
 
@@ -28,7 +28,7 @@
 
        run rake db:migrate
        
-    8. can test out the login function from localhost:3000/login
+    8. 26 Apr (HH) - can test out the login functionality from localhost:3000/login
            
 
 
