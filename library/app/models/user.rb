@@ -12,12 +12,12 @@ class User < ActiveRecord::Base
         end
   end
 
-  def password=(unencrypted_password)
-        @password = unencrypted_password
-        unless unencrypted_password.blank?
-          self.password_digest = BCrypt::Password.create(unencrypted_password)
-        end
-  end
+  #def password=(unencrypted_password)
+  #      @password = unencrypted_password
+  #      unless unencrypted_password.blank?
+  #        self.password_digest = BCrypt::Password.create(unencrypted_password)
+  #      end
+  #end
 
 
 end
