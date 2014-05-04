@@ -29,6 +29,9 @@
        run rake db:migrate
        
     8. 26 Apr (HH) - can test out the login functionality from localhost:3000/login
+
+    9. 4 May (HH) - updated db:seeds.rb so that it will not create a new entry for 
+          somthing that is already in the DB using first_or_create
            
 
 
