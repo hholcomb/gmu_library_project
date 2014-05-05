@@ -31,7 +31,24 @@
     8. 26 Apr (HH) - can test out the login functionality from localhost:3000/login
 
     9. 4 May (HH) - updated db:seeds.rb so that it will not create a new entry for 
-          somthing that is already in the DB using first_or_create
+          somthing that is already in the DB by using first_or_create
+   10. 4 May (HH) pushed changes to github
+
+   11. brought in from wine_reviews - .../layouts/application.html.erb,
+                                                 /_footer.html.erb
+                                                 /header.html.erb
+                                                 /_sidebar.html.erb
+                                     ...shared/_flashes.html.erb
+        and modified to work for this project
+   12. updated Gemfile to contain bootstrap-sass (as per HW)
+   13. ran bundle install
+   14. updated app/assets/stylesheets/application.css to specify
+                  *= require 'bootstrap'
+        (as per HW)
+   15. updated session view to separate fields
+   16. initial session display now looks much better - but shouldn't contain the sidebar
+   16. 4 May (HH) pushed changes to github
+                                      
            
 
 
