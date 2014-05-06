@@ -32,7 +32,7 @@
 
     9. 4 May (HH) - updated db:seeds.rb so that it will not create a new entry for 
           somthing that is already in the DB by using first_or_create
-   10. 4 May (HH) pushed changes to github
+   10. 4 May (HH) push changes to github
 
    11. brought in from wine_reviews - .../layouts/application.html.erb,
                                                  /_footer.html.erb
@@ -47,7 +47,15 @@
         (as per HW)
    15. updated session view to separate fields
    16. initial session display now looks much better - but shouldn't contain the sidebar
-   16. 4 May (HH) pushed changes to github
+   16. 4 May (HH) push changes to github
+   17. update files to clean up session display
+   18. 5 May (HH) push changes to github
+   19. clean up the sidebar so that 
+              no options are displayed until user is logged in  
+              logout button is on the sidebar
+              note - the logout clears the session datas
+   20. 5 May (HH) push changes to github
+
                                       
            
 
