@@ -12,6 +12,10 @@ Library::Application.routes.draw do
   get "sessions/destroy"
   resources :users
 
+  get "/reservations" => "reservations#index", as: 'reservations'
+  get "/reservations/overdue" => "reservations#overdue", as: 'overdue'
+  get "/authors" => "authors#index", as: 'authors'
+  get "/authors/:id" => "authors#show", as: 'author'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
