@@ -4,12 +4,15 @@
     <h3 class="panel-title">Things to do ...</h3>
   </div>
   <div class="panel-body">
-    <p>
-      <%= link_to 'Display All Books', books_path %>
-    </p>
-    <p>
-      <%= link_to 'Create Book Entry', new_book_path %>
-    </p>
+    <% if session[:user_id] %>
+      <p>
+        <%= link_to 'Display All Books', books_path %>
+      </p>
+      <p>
+        <%= link_to 'Create Book Entry', new_book_path %>
+      </p>
+      <%= button_to 'Logout', logout_path, method: :delete %>
+    <% end %> 
   </div>
 </div>
 </div>

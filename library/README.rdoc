@@ -50,6 +50,12 @@
    16. 4 May (HH) push changes to github
    17. update files to clean up session display
    18. 5 May (HH) push changes to github
+   19. clean up the sidebar so that 
+              no options are displayed until user is logged in  
+              logout button is on the sidebar
+              note - the logout clears the session datas
+   20. 5 May (HH) push changes to github
+
                                       
            
 
