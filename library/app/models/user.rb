@@ -19,5 +19,8 @@ class User < ActiveRecord::Base
   #      end
   #end
 
+has_many :books, through: :reservations, dependent: :destroy
+
+has_many :reservations
 
 end

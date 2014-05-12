@@ -1,4 +1,6 @@
 Library::Application.routes.draw do
+  resources :reservations
+
   resources :books
 
   controller :sessions do
@@ -12,8 +14,9 @@ Library::Application.routes.draw do
   get "sessions/destroy"
   resources :users
 
-  get "/reservations" => "reservations#index", as: 'reservations'
+#  get "/reservations" => "reservations#index", as: 'reservations'
   get "/reservations/overdue" => "reservations#overdue", as: 'overdue'
+  post "/reservations/kill" => "reservations#destroy"
   get "/authors" => "authors#index", as: 'authors'
   get "/authors/:id" => "authors#show", as: 'author'
   # The priority is based upon order of creation: first created -> highest priority.

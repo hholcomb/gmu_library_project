@@ -1,1 +1,35 @@
 <h1>My Reservations</h1>
+
+<ol id="reservations">
+  <% @reservations.each do |reservation| %>
+    <l1>
+      <span>
+	<%= reservation.user_id %>
+      </span>
+
+      <span>
+	<%= reservation.book_id %>
+      </span>
+
+      <span class="date">
+          | reserved - <%= reservation.reserved_on.to_s(:short) %> 
+      </span>
+
+      <span class="date">
+         | due - <%= reservation.due_on.to_s(:short) %>
+      </span>
+
+      <span>
+	| title - <%= Book.find(reservation.book_id).title %>
+      </span>
+
+      <span>
+        | <%= button_to 'Return book', reservations_kill_path(thereservationid: reservation.id ), 
+                 data: {confirm: 'Are you sure?' } %>
+      </span>
+
+
+     </br>
+    </li>
+  <% end %>
+</ol>
