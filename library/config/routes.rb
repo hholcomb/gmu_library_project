@@ -1,5 +1,8 @@
 Library::Application.routes.draw do
-  resources :books
+  
+  resources :books do 
+    get 'page/:page', :action => :index, :on => :collection
+  end
 
   controller :sessions do
     get 'login' => :new
