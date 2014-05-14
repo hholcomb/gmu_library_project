@@ -3,16 +3,28 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
+<<<<<<< HEAD
   def index
     @books = Book.order(:title).page(params[:page])
   end
+=======
+  
+def index
+   @books = Book.all
+end
+>>>>>>> 42594ea2ac82907a9e40b564acf01f931785f299
 
   # GET /books/1
   # GET /books/1.json
   def show
   end
 
-  # GET /books/new
+  # GET /books/search
+
+def search
+  @books = Book.search params[:search]
+end
+# GET /books/new
   def new
     @book = Book.new
   end

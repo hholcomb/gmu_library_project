@@ -56,6 +56,50 @@
               note - the logout clears the session datas
    20. 5 May (HH) push changes to github
    21. test
+   22. 10 May safe off existing reservations_controller.rb
+   23. have rails generate a resource for the reservation using the command
+       student@student-VirtualBox:~/Workspace/gmu_library_project/library$ rails generate resource reservation reserved_on:date due_on:date user:references book:references
+      invoke  active_record
+      create    db/migrate/20140510183019_create_reservations.rb
+      create    app/models/reservation.rb
+      invoke    test_unit
+      create      test/models/reservation_test.rb
+      create      test/fixtures/reservations.yml
+      invoke  controller
+      create    app/controllers/reservations_controller.rb
+      invoke    erb
+       exist      app/views/reservations
+      invoke    test_unit
+      create      test/controllers/reservations_controller_test.rb
+      invoke    helper
+      create      app/helpers/reservations_helper.rb
+      invoke      test_unit
+      create        test/helpers/reservations_helper_test.rb
+      invoke    assets
+      invoke      coffee
+      create        app/assets/javascripts/reservations.js.coffee
+      invoke      scss
+      create        app/assets/stylesheets/reservations.css.scss
+      invoke  resource_route
+       route    resources :reservations
+student@student-VirtualBox:~/Workspace/gmu_library_project/library$ 
+
+   24. replace the generate empty Reservations controller with the one from the team
+   25. rake db:migrate    
+            reports "reservations" rothe already defined
+            return to using the base config/routes.rb file
+            rerun rake db:migrate    - all works
+   26. update app/model/reservations.rb to specify dependent: :destroy for both book and user
+   27. update app/model/book and app/model/user to  know about the resevations
+   28. update Reservations controll for the index function modeled after class #11
+              app/views/reservations/index.html.erb modeled after class #11
+   29. updated new book display- app/views/books/show.html.erb - 
+              it was showing the flash 2x  Removed the notice line
+   30. updated config/routes from the team to not specify the entry for reservations
+             and add a new route to get to the book return function - now works
+   31. The Reserve book, view My Reservations and Return book functions now seem to be working
+           in a very primitive way.
+
 
 
                                       

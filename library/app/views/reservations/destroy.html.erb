@@ -1,0 +1,11 @@
+<h1>Destroy Reservation /h1>
+
+<p> the params hash is </p>
+<%=  params.inspect  %>
+</b>
+
+<%= params[:thereservationid] %>
+</b>
+
+<%= Reservation.find( params[:thereservationid] ).inspect %>
+</b>

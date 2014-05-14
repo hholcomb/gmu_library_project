@@ -8,9 +8,14 @@
       <p>
         <%= link_to 'Display All Books', books_path %>
       </p>
+      
       <p>
         <%= link_to 'Create Book Entry', new_book_path %>
       </p>
+      <p>
+        <%= link_to 'My Reservations', reservations_path %>
+      </p>
+      
       <%= button_to 'Logout', logout_path, method: :delete %>
     <% end %> 
   </div>

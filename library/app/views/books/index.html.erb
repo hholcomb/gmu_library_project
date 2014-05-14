@@ -1,13 +1,46 @@
+<<<<<<< HEAD
 <h1>All Books</h1>
   
   <%= page_entries_info @books %>
+=======
+<h1>Listing Books</h1>
+
+
+<%= form_tag books_path, :method => 'get'  do %>
+   <%= text_field_tag :search, params[:search]%>
+   <%= submit_tag "Search", :name => nil  %>
+ <% end %>
+ 
+>>>>>>> 42594ea2ac82907a9e40b564acf01f931785f299
 
   <ol>
     <% @books.each do |book| %>
+<<<<<<< HEAD
     <li><%= link_to(book.title, book) %> by <%= book.author %></li>
   <% end %>
   </ol>
 <%= paginate @books %>
+=======
+      <tr>
+        <td><%= book.isbn %></td>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= book.genre %></td>
+        <td><%= book.abstract %></td>
+        <td><%= book.pages %></td>
+        <td><%= book.image_cover_url %></td>
+        <td><%= book.published_on %></td>
+        <td><%= book.total_in_library %></td>
+        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <td><%= button_to 'Reserve', reservations_path(book_id: book, user_index: session[:user_index] ) %>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+>>>>>>> 42594ea2ac82907a9e40b564acf01f931785f299
 
 
 <%= link_to 'New Book', new_book_path %>

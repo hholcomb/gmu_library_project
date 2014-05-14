@@ -1,4 +1,11 @@
 class Book < ActiveRecord::Base
+
+
+def self.search(search)
+  search_condition = "%" + search + "%"
+  find(:all, :conditions => ['title LIKE ? OR description LIKE ?', search_condition, search_condition])
+end
+
   
 GENRE = [ 'Sci-fi', 'Drama', 'Fiction' , 'Non-Fiction' ]
 
@@ -15,5 +22,9 @@ GENRE = [ 'Sci-fi', 'Drama', 'Fiction' , 'Non-Fiction' ]
 
   validates :abstract, length: { minimum: 15 }, 
     unless: 'abstract.blank?'
+
+has_many :users, through: :reservations, dependent: :destroy
+
+has_many :reservations
 
 end
