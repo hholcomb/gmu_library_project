@@ -100,6 +100,10 @@ student@student-VirtualBox:~/Workspace/gmu_library_project/library$
    31. The Reserve book, view My Reservations and Return book functions now seem to be working
            in a very primitive way.
    32. 16 May - fix problems with deleting a book that had reservations 
+   33. 17 May - add Overdue books capability
+   34. changed routes so that specific reservation routes come before standard ones - had problem with overdue going to show
+   35. modified _sidebar.html.erb so that the menu differentiates between normal and priv user
+   36. 17 May - pushed changes to github
 
 
 
