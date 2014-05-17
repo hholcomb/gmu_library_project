@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
 
-before_action :set_user, only: [:index, :overdue]
+#before_action :set_user, only: [:index, :overdue]
+before_action :set_user, only: [:index]
 
 before_action :set_book, only: [:create]
 
@@ -11,9 +12,11 @@ before_action :set_book, only: [:create]
 
   # GET /reservations/overdue
   def overdue
+   @overdueset = Reservation.where( "due_on < ?", Time.zone.now )
   end
 
   def show
+   @overdueset = Reservation.where( "due_on < ?", Time.zone.now ).order(:user_id)
   end
 
 

@@ -11,6 +11,14 @@
 	<%= reservation.book_id %>
       </span>
 
+      <span>
+	image_cover_url
+      </span>
+
+      <span>
+	| title - <%= Book.find(reservation.book_id).title %>
+      </span>
+
       <span class="date">
           | reserved - <%= reservation.reserved_on.to_s(:short) %> 
       </span>
@@ -20,11 +28,7 @@
       </span>
 
       <span>
-	| title - <%= Book.find(reservation.book_id).title %>
-      </span>
-
-      <span>
-        | <%= button_to 'Return book', reservations_kill_path(thereservationid: reservation.id ), 
+        | <%= button_to 'Return book', reservations_kill_path(thereservationid: reservation.id , theuserid: reservation.user_id), 
                  data: {confirm: 'Are you sure?' } %>
       </span>
 

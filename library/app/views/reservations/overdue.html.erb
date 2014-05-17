@@ -1,1 +1,41 @@
 <h1>Overdue Book</h1>
+
+<ol id="reservations">
+  <% @overdueset.each do |reservation| %>
+    <l1>
+      <span>
+	<%= reservation.user_id %>
+      </span>
+
+      <span>
+	<%= reservation.book_id %>
+      </span>
+
+      <span>
+	| title - <%= Book.find(reservation.book_id).title %>
+      </span>
+
+      <span>
+	| reserved by - <%= User.find(reservation.user_id).name %>
+      </span>
+
+      <span class="date">
+          | reserved on - <%= reservation.reserved_on.to_s(:short) %> 
+      </span>
+
+      <span class="date">
+         | due on - <%= reservation.due_on.to_s(:short) %>
+      </span>
+
+      <span>
+        | <%= button_to 'Return book', reservations_kill_path(thereservationid: reservation.id, theuserid: reservation.user_id ), 
+                 data: {confirm: 'Are you sure?' } %>
+      </span>
+
+
+     </br>
+    </li>
+  <% end %>
+</ol>
+
+

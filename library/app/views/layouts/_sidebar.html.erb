@@ -8,10 +8,16 @@
       <p>
         <%= link_to 'Display All Books', books_path %>
       </p>
-      
-      <p>
-        <%= link_to 'Create Book Entry', new_book_path %>
-      </p>
+      <% if session[:admin] == true %> 
+        <p>
+          <%= link_to 'Create Book Entry', new_book_path %>
+        </p>
+
+        <p>
+          <%= link_to 'Overdue Books', reservations_overdue_path %>
+        </p>
+      <% end %>
+
       <p>
         <%= link_to 'My Reservations', reservations_path %>
       </p>

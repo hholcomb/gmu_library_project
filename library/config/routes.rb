@@ -4,6 +4,10 @@ Library::Application.routes.draw do
     get 'page/:page', :action => :index, :on => :collection
   end
 
+#	put the specific routes here so they are checked before the default ones
+
+  get "/reservations/overdue" => "reservations#overdue"
+  post "/reservations/kill" => "reservations#destroy"
   resources :reservations
 
 
@@ -19,8 +23,9 @@ Library::Application.routes.draw do
   resources :users
 
 #  get "/reservations" => "reservations#index", as: 'reservations'
-  get "/reservations/overdue" => "reservations#overdue", as: 'overdue'
-  post "/reservations/kill" => "reservations#destroy"
+#  get "/reservations/overdue" => "reservations#overdue", as: 'overdue'
+#  get "/reservations/overdue" => "reservations#overdue"
+#  post "/reservations/kill" => "reservations#destroy"
   get "/authors" => "authors#index", as: 'authors'
   get "/authors/:id" => "authors#show", as: 'author'
   # The priority is based upon order of creation: first created -> highest priority.
