@@ -99,6 +99,8 @@ student@student-VirtualBox:~/Workspace/gmu_library_project/library$
              and add a new route to get to the book return function - now works
    31. The Reserve book, view My Reservations and Return book functions now seem to be working
            in a very primitive way.
+   32. 16 May - fix problems with deleting a book that had reservations 
+
 
 
 
