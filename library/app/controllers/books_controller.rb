@@ -61,6 +61,11 @@ end
   # DELETE /books/1.json
   def destroy
     @book.destroy
+    @destroybookid=@book.id
+#	delete the associated reservations
+    Reservation.where( "book_id ='#{@destroybookid}'").each do |deleteit|
+        deleteit.delete
+    end
     respond_to do |format|
       format.html { redirect_to books_url }
       format.json { head :no_content }
