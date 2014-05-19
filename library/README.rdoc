@@ -104,6 +104,12 @@ student@student-VirtualBox:~/Workspace/gmu_library_project/library$
    34. changed routes so that specific reservation routes come before standard ones - had problem with overdue going to show
    35. modified _sidebar.html.erb so that the menu differentiates between normal and priv user
    36. 17 May - pushed changes to github
+   37. 18 May - updated books_controller, (books) index.html and (books) show,html
+              to have checks in the show page to determine which functions are for normal users and which for priv users
+              removed the extra links from the all books page (index).
+              Believe that these two pages now match requirements (except for displaying graphic for book cover page)
+
+              Pushed changes to github
 
 
 

@@ -24,6 +24,7 @@
   <%= @book.abstract %>
 </p>
 
+
 <p>
   <strong>Pages:</strong>
   <%= @book.pages %>
@@ -44,6 +45,34 @@
   <%= @book.total_in_library %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
+<p>
+  <strong>Current Reservations for the book:</strong>
+  <%= @recordcount %>
+</p>
+
+<p>
+  <% if @book.total_in_library > @recordcount %>
+    <strong>Copies of this book can be reserved</strong>
+  <% else %>
+    <strong>There are no copies of the book available to be reserved</strong>
+ <% end %>
+</p>
+
+<p>
+
+  <% if @myreservationcount > 0 %>
+    <strong> You already have this book reserved</strong>
+  <% else %>
+    <% if @book.total_in_library > @recordcount %>
+      <%= button_to 'Reserve', reservations_path(book_id: @book, user_index: session[:user_index] ) %>
+    <% end %> 
+  <% end %>
+</p>
+
+ <% if session[:admin] == true %> 
+   <%= link_to 'Edit', edit_book_path(@book) %> |
+   <%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% end %>
+
 <%= link_to 'Back', books_path %>
 

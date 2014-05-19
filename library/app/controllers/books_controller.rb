@@ -11,6 +11,22 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @records=Reservation.where("book_id=?" , @book.id).all
+    if @records.nil?
+      @recordcount = 0
+    else
+      @recordcount=@records.count
+    end
+
+    @myuserid = session[:user_index]
+
+    @myreservationsforthisbook=Reservation.where("book_id=? and user_id=?", @book.id, session[:user_index]).all
+#    @myreservationsforthisbook=Reservation.where("user_id=?", session[:user_index]).all
+    if @myreservationsforthisbook.nil?
+      @myreservationcount = 0
+    else
+      @myreservationcount = @myreservationsforthisbook.count
+    end
   end
 
   # GET /books/search
