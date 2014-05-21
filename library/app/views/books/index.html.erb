@@ -6,25 +6,31 @@
 </span>
 
 <h1>All Books</h1>
-
   
   <%= page_entries_info @books %>
 
 
 <%= form_tag books_path, :method => 'get'  do %>
-
+   <%= text_field_tag :search, params[:search]%>
+   <%= submit_tag "Search", :name => nil  %>
  <% end %>
  
 
   <ol>
     <% @books.each do |book| %>
 
-    <li>
-       <%= link_to(book.title, book) %> by <%= book.author %>
+    <li><%= link_to(book.title, book) %> by <%= book.author %>
+        <%= link_to 'Show', book %>
+        <%= link_to 'Edit', edit_book_path(book) %>
+        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= button_to 'Reserve', reservations_path(book_id: book, user_index: session[:user_index] ) %>
     </li>
     
   <% end %>
   </ol>
 <%= paginate @books %>
+
+
+<%= link_to 'New Book', new_book_path %>
 
 
