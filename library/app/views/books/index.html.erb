@@ -7,14 +7,7 @@
 
 <h1>All Books</h1>
   
-  <%= page_entries_info @books %>
-
-
-<%= form_tag books_path, :method => 'get'  do %>
-   <%= text_field_tag :search, params[:search]%>
-   <%= submit_tag "Search", :name => nil  %>
- <% end %>
- 
+  <%= page_entries_info @books %> 
 
   <ol>
     <% @books.each do |book| %>
