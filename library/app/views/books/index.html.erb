@@ -5,19 +5,20 @@
      <% end %> 
 </span>
 
-<h1>All Books</h1>
-  
+<h1>Books</h1>
+  <p>
   <%= page_entries_info @books %> 
-
+  </p>
   <ol>
     <% @books.each do |book| %>
 
-    <li><%= link_to(book.title, book) %></h2> by <%= book.author %>
-        <%= link_to 'Show', book %>
-        <%= link_to 'Edit', edit_book_path(book) %>
-        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= button_to 'Reserve', reservations_path(book_id: book, user_index: session[:user_index] ) %>
+    <li>
+      <div class="book-content-area">
+        <span class="book-title"><%= link_to(book.title, book) %></span>
+        <span class="by-author"> by <%= book.author %></span>
+      </div>
     </li>
+    <br>
     
   <% end %>
   </ol>
