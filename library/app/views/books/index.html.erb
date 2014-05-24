@@ -12,7 +12,7 @@
   <ol>
     <% @books.each do |book| %>
 
-    <li><%= link_to(book.title, book) %> by <%= book.author %>
+    <li><%= link_to(book.title, book) %></h2> by <%= book.author %>
         <%= link_to 'Show', book %>
         <%= link_to 'Edit', edit_book_path(book) %>
         <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
