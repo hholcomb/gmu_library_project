@@ -1,13 +1,16 @@
 package edu.gmu.authorservice.web;
 
 import edu.gmu.authorservice.dao.AuthorDao;
+import edu.gmu.authorservice.model.Author;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.util.Collection;
 import java.util.logging.Logger;
 
 @Path("/")
@@ -33,7 +36,25 @@ public class AuthorResource {
         return "This is the result. Success!";
     }
 
-    // TODO Implement two methods here: one to obtain all authors
-    // and a second to obtain an author by id
+    // Tmethod to obtain all authors
+    @Path("/authors.json")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Collection<Author> authors() {
+        logger.info("Handling the authors request");
+        return _authorDao.getAllAuthors();
+ 
+
+    }
+
+    // Tmethod to obtain an author by id
+    @Path("/authors/{authorid}.json")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Author author( @PathParam("authorid") Integer id) {
+        logger.info("Handling the author by id request");
+        return _authorDao.getAuthor( id );
+
+    }
 
 }
