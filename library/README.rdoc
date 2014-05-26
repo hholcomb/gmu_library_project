@@ -108,6 +108,15 @@ student@student-VirtualBox:~/Workspace/gmu_library_project/library$
               to have checks in the show page to determine which functions are for normal users and which for priv users
               removed the extra links from the all books page (index).
               Believe that these two pages now match requirements (except for displaying graphic for book cover page)
+   38. 26 May - added the initial version of the RoR code to support authors functionality
+   39. added the activeresource to Gemfile
+   40. ran bundle install to install the gem
+   41. created and/or modified various authors files
+   42. changed app/views/books/show.html.erb  to display the url for the graphic or indicate no graphic available
+   43. modified app/views/layouts/_sidebar.html.erb to contain the link for the authors
+   44. modified app/views/reservations/inidex.html.erb to display the book cover url
+   45. 26 May - pushed changes to github
+
 
               Pushed changes to github
 
