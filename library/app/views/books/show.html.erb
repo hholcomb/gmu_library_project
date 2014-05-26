@@ -1,13 +1,32 @@
 
 <p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<% if @book.image_cover_url.length > 0 %>
+<p>
+  <strong>Graphic:</strong>
+  <%= @book.image_cover_url %>
+</p>
+<% else %>
+<p>
+  <strong> no image available </strong>
+</p>
+<% end %>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @book.abstract %>
+</p>
+
+<h4>Details</h4>
+
+<p>
   <strong>ISBN:</strong>
   <%= @book.isbn %>
 </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
 
 <p>
   <strong>Author:</strong>
@@ -19,20 +38,10 @@
   <%= @book.genre %>
 </p>
 
-<p>
-  <strong>Abstract:</strong>
-  <%= @book.abstract %>
-</p>
-
 
 <p>
   <strong>Pages:</strong>
   <%= @book.pages %>
-</p>
-
-<p>
-  <strong>Image cover url:</strong>
-  <%= @book.image_cover_url %>
 </p>
 
 <p>
@@ -46,7 +55,7 @@
 </p>
 
 <p>
-  <strong>Current Reservations for the book:</strong>
+  <strong>Current copies on Reserve:</strong>
   <%= @recordcount %>
 </p>
 

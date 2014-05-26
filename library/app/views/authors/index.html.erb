@@ -1,1 +1,12 @@
 <h1>Authors</h1>
+
+   <% @authors.each do |author| %>
+
+    <li>
+      <div class="book-content-area">
+        <span class="author"> graphic </span>
+        <span class="author"> - <%= link_to author.name, author_path( author.id )  %></span>
+      </div>
+   </li>
+  <% end %>
+

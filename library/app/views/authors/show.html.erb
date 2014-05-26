@@ -1,3 +1,51 @@
-<h1>Authors Show</h1>
+<h2><%= @author.name %></h2>
+
+<% if @author.image_url.length > 0 %>
+<p>
+  <strong>Graphic:</strong>
+  <%= @author.image_url %>
+</p>
+<% else %>
+  <strong> no image available </strong>
+<% end %>
+
+<p>
+  <strong>Biography:</strong>
+  <%= @author.biography %>
+</p>
+
+<p>
+  <h4> Details: </h4>
+</p>
+
+<p>
+  <strong>Date of Birth:</strong>
+  <%= @author.dob %>
+</p>
+
+<p>
+  <strong>Nationality:</strong>
+  <%= @author.nationality %>
+</p>
+
+<% if @author.awards.length > 0 %>
+<p>
+  <strong>Awards:</strong>
+  <%= @author.awards %>
+</p>
+<% end %>
+
+
+<p>
+  <h4>Publications:</h4>
+</p>
+
+<p>
+<% @publishedBooks.each do |publishedBook| %>
+
+  <strong> <%= publishedBook.title%> </strong>
+<% end %>
+</p>
+
 |
 <%= link_to 'Back', authors_path %>

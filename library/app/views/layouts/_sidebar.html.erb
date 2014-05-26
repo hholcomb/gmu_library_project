@@ -8,6 +8,11 @@
       <p>
         <%= link_to 'Display All Books', books_path %>
       </p>
+
+      <p>
+        <%= link_to 'Authors', authors_path %>
+      </p>
+
       <% if session[:admin] == true %> 
         <p>
           <%= link_to 'Create Book Entry', new_book_path %>
