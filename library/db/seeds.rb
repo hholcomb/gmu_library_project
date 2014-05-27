@@ -11,3 +11,7 @@ User.where(name: 'user_3').first_or_create!(name: 'user_3', user_id:'user_3', pa
 User.where(name: 'user_4').first_or_create!(name: 'user_4', user_id:'user_4', password: 'password', admin: false)
 User.where(name: 'priv_1').first_or_create!(name: 'priv_1', user_id:'priv_1', password: 'password', admin: true)
 User.where(name: 'priv_2').first_or_create!(name: 'priv_2', user_id:'priv_2', password: 'password', admin: true)
+
+#foo
+Book.create(title: 'The Hobbit', author: 'J.R.R. Tolkien ', genre: 'Fantasy', isbn: '978-0544174221', pages: '384', published_on: '1937', total_in_library: '5', abstract: 'Gandalf tricks Bilbo into hosting a party for Thorin and his band of dwarves, who sing of reclaiming the Lonely Mountain and its vast treasure from the dragon Smaug.')
+Book.create(title: 'The Lord of the Rings', author: 'J.R.R. Tolkien ', genre: 'Fantasy', isbn: '978-0547928210', pages: '432', published_on: '1954', total_in_library: '5', abstract: 'The story begins in the Shire, where the Hobbit Frodo Baggins inherits the Ring from Bilbo Baggins, his cousin and guardian. Neither is aware of its origin and nature, but Gandalf the Grey, a wizard and old friend of Bilbo, suspects the Rings identity.')
