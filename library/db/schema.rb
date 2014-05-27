@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510183019) do
+ActiveRecord::Schema.define(version: 20140526202701) do
 
   create_table "books", force: true do |t|
     t.string   "isbn"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140510183019) do
     t.integer  "total_in_library"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "author_id"
   end
 
   create_table "reservations", force: true do |t|
