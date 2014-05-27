@@ -12,11 +12,11 @@
       </span>
 
       <span>
-	graphic - <%= Book.find(reservation.book_id).image_cover_url %>
+	<%= image_tag(reservation.book.image_cover_url, height: "100", width: "80")%>
       </span>
 
-      <span>
-	| title - <%= Book.find(reservation.book_id).title %>
+      <span class='book-title'>
+	| <%= reservation.book.title %>
       </span>
 
       <span class="date">
