@@ -1,24 +1,23 @@
 
-<p>
-  <strong>Title:</strong>
+<p class='book-title'>
   <%= @book.title %>
 </p>
-
 <% if @book.image_cover_url.length > 0 %>
-<p>
-  <strong>Graphic:</strong>
-  <%= @book.image_cover_url %>
-</p>
+  <div class='abstract-area'>
+  <span>
+  <%= image_tag(@book.image_cover_url, height: "100", width: "80")%>
+  </span>
 <% else %>
-<p>
-  <strong> no image available </strong>
-</p>
+  <div class='abstract-area'>
+  <p>
+    <strong> no image available </strong>
+  </p>
 <% end %>
 
-<p>
-  <strong>Abstract:</strong>
+<span class='book-abstract'>
   <%= @book.abstract %>
-</p>
+</span>
+</div>
 
 <h4>Details</h4>
 

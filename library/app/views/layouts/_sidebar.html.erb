@@ -5,25 +5,25 @@
   </div>
   <div class="panel-body">
     <% if session[:user_id] %>
-      <p>
-        <%= link_to 'Display All Books', books_path %>
+      <p><i class="glyphicon glyphicon-book"></i>
+        <%= link_to 'All Books', books_path %>
       </p>
 
-      <p>
+      <p><i class="glyphicon glyphicon-user"></i>
         <%= link_to 'Authors', authors_path %>
       </p>
 
       <% if session[:admin] == true %> 
-        <p>
-          <%= link_to 'Create Book Entry', new_book_path %>
+        <p><i class="glyphicon glyphicon-plus-sign"></i>
+          <%= link_to 'New Book', new_book_path %>
         </p>
 
-        <p>
+        <p><i class="glyphicon glyphicon-exclamation-sign"></i>
           <%= link_to 'Overdue Books', reservations_overdue_path %>
         </p>
       <% end %>
 
-      <p>
+      <p><i class="glyphicon glyphicon-check"></i>
         <%= link_to 'My Reservations', reservations_path %>
       </p>
       
