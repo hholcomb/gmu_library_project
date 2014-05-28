@@ -2,10 +2,12 @@
      <%= form_tag books_path, :method => 'get' do %> 
        <%= text_field_tag :search, params[:search]%>
        <%= submit_tag "Search", :book => nil  %>
+       
      <% end %> 
 </span>
 
 <h1>Books</h1>
+<text id="message" name="message" type="hidden" cols="24" rows="6"><strong>Search Results</strong></text> <br>
   <p>
   <%= page_entries_info @books %> 
   </p>
