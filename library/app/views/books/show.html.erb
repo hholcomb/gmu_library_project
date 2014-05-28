@@ -29,7 +29,11 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @book.author %>
+  <% if @book.author_id < 1 %>
+    <%= @book.author %>
+  <% else %>
+   <%= link_to @book.author, author_path(@book.author_id) %>
+  <% end %>
 </p>
 
 <p>
