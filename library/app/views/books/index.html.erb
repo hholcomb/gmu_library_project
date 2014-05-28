@@ -16,7 +16,7 @@
 
     <li>
       <div class="book-content-area">
-        <span><% link_to(book.image_cover_url, book) %></span>
+        <span><%= image_tag(book.image_cover_url, height: "100", width: "80") %></span>
         <span class="book-title"><%= link_to(book.title, book) %></span>
         <span class="by-author"> by <%= book.author %></span>
       </div>

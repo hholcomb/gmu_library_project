@@ -23,6 +23,13 @@
     <%= f.label :author %><br>
     <%= f.text_field :author %>
   </div>
+
+  <div class="field">
+    <%= f.label :dbauthor %><br>
+    <%= f.select :author, @authors.collect { |a| [a.name, a.id ] }, {prompt: "Choose One"} %>
+
+  </div>
+
   <div class="field">
     <%= f.label :genre %><br>
     <%= f.select :genre, Book::GENRE, {prompt: "Choose One"} %> 

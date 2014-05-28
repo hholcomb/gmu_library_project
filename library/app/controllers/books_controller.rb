@@ -32,17 +32,28 @@ class BooksController < ApplicationController
 # GET /books/new
   def new
     @book = Book.new
+    @authors = Author.all
   end
 
   # GET /books/1/edit
   def edit
+    @authors = Author.all
   end
 
   # POST /books
   # POST /books.json
   def create
     @book = Book.new(book_params)
-
+    @book.author_id = -1
+    if @book.author.to_i 
+      @authors = Author.all
+      @authors.each do |a|
+        if @book.author.to_i == a.id
+          @book.author = a.name
+          @book.author_id = a.id
+        end
+      end
+    end
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
@@ -57,8 +68,19 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
+    @book.update(book_params)
+    @book.author_id = -1
+    if @book.author.to_i 
+      @authors = Author.all
+      @authors.each do |a|
+        if @book.author.to_i == a.id
+          @book.author = a.name
+          @book.author_id = a.id
+        end
+      end
+    end
     respond_to do |format|
-      if @book.update(book_params)
+      if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
         format.json { head :no_content }
       else

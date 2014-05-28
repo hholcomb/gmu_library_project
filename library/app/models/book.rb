@@ -8,7 +8,7 @@ class Book < ActiveRecord::Base
     end  
   end  
   
-GENRE = [ 'Sci-fi', 'Drama', 'Fiction' , 'Non-Fiction' ]
+GENRE = [ 'Sci-fi', 'Drama', 'Fiction' , 'Non-Fiction' , 'Fantasy' ]
 
   validates :title, :author, :isbn, :genre, :abstract, :pages,  presence: true
   

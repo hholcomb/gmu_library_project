@@ -116,6 +116,10 @@ student@student-VirtualBox:~/Workspace/gmu_library_project/library$
    43. modified app/views/layouts/_sidebar.html.erb to contain the link for the authors
    44. modified app/views/reservations/inidex.html.erb to display the book cover url
    45. 26 May - pushed changes to github
+   46. updated books controller to allow the author to be specified from the java WEB service information
+   47. update the books schema to account for the author_id field
+   48. 27 MaY - PUSHED TO GITHUB
+
 
 
               Pushed changes to github
