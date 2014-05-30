@@ -119,6 +119,18 @@ student@student-VirtualBox:~/Workspace/gmu_library_project/library$
    46. updated books controller to allow the author to be specified from the java WEB service information
    47. update the books schema to account for the author_id field
    48. 27 MaY - PUSHED TO GITHUB
+   49. 29 May - added the encrypted password functionality.
+   50.  this include 2 migrations and changes to the db/seeds.rb file
+   51.  added a new gem (bcrypt-ruby) to Gemfile - run bundle install & restart the server
+   52.  neede to delete the current user entries in the database
+                rails dbconsole
+                select * from users;
+                delete from users;
+                .quit
+   53. now run the rake db:seed
+   54. the user passwords are in the seeds.rb file but are not in the DB file - only the password digest is in the DB
+   55. push the changes to github
+
 
 
 
