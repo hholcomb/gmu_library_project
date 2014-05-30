@@ -4,9 +4,9 @@
 </p>
 <% if @book.image_cover_url.length > 0 %>
   <div class='abstract-area'>
-  <span class='cover-image'>
+  <div class='cover-image'>
   <%= image_tag(@book.image_cover_url, height: "100", width: "80")%>
-  </span>
+  </div>
 <% else %>
   <div class='abstract-area'>
   <p>
@@ -14,9 +14,9 @@
   </p>
 <% end %>
 
-<span class='book-abstract'>
+<div class='book-abstract'>
   <%= @book.abstract %>
-</span>
+</div>
 </div>
 
 <h4>Details</h4>

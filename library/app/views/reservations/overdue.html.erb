@@ -1,34 +1,38 @@
-<h1>Overdue Book</h1>
+<h2>Overdue Book</h2>
 
 <ol id="reservations">
   <% @overdueset.each do |reservation| %>
-    <l1>
+    <li>
       <span>
-	<%= reservation.user_id %>
+  <%= image_tag(reservation.book.image_cover_url, height: "100", width: "80") %>
+      </span><br><br>
+
+      <span>
+	<%= hidden_field_tag reservation.user_id %>
       </span>
 
       <span>
-	<%= reservation.book_id %>
+	<%= hidden_field_tag reservation.book_id %>
       </span>
 
-      <span>
-	| title - <%= Book.find(reservation.book_id).title %>
-      </span>
+      <span class="book-title">
+	<%= Book.find(reservation.book_id).title %>
+      </span><br>
 
       <span>
-	| reserved by - <%= User.find(reservation.user_id).name %>
-      </span>
+	Reserved by - <%= User.find(reservation.user_id).name %>
+      </span><br>
 
       <span class="date">
-          | reserved on - <%= reservation.reserved_on.to_s(:short) %> 
-      </span>
+          Reserved on - <%= reservation.reserved_on.to_s(:short) %> 
+      </span><br>
 
       <span class="date">
-         | due on - <%= reservation.due_on.to_s(:short) %>
-      </span>
+         Due on - <%= reservation.due_on.to_s(:short) %>
+      </span><br><br>
 
       <span>
-        | <%= button_to 'Return book', reservations_kill_path(thereservationid: reservation.id, theuserid: reservation.user_id ), 
+        <%= button_to 'Return book', reservations_kill_path(thereservationid: reservation.id, theuserid: reservation.user_id ), 
                  data: {confirm: 'Are you sure?' } %>
       </span>
 

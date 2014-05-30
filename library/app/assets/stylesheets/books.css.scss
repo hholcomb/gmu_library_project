@@ -1,6 +1,7 @@
 // Place all the styles related to the Books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .search-span {
 	float: right;
 	margin-top: 29px;
@@ -9,8 +10,12 @@
 	height: 140px;
 	width: 100%;
 	background-color: #f2f2f2;
-	border: 1px solid #eee;
+	border: 1px solid #ddd;
 	padding: 10px;
+}
+.book-image-area {
+	float: left;
+	margin-right: 5px;
 }
 .book-title {
 	font-size: 20px;
@@ -19,13 +24,16 @@
 	text-size: 14px;
 }
 .book-edits {
-	text-size: 10px;
+	font-size: 10px;
 }
 .abstract-area {
 	vertical-align: top;
 	padding: 15px;
+	margin-bottom: 40px;
 }
 .cover-image {
+	float: left;
+	margin-right: 5px;
 }
 .book-abstract {
 	vertical-align: top;

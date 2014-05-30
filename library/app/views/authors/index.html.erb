@@ -1,12 +1,15 @@
-<h1>Authors</h1>
+<h2>Authors</h2>
 
    <% @authors.each do |author| %>
-
+<ul>
     <li>
       <div class="book-content-area">
-        <span class="author"> graphic </span>
-        <span class="author"> - <%= link_to author.name, author_path( author.id )  %></span>
+        <span class="author">
+		<%= image_tag(author.image_url, height: "100", width: "80")%>
+      	</span>
+        <span class="author author-name"> - <%= link_to author.name, author_path( author.id )  %></span>
       </div>
    </li>
+ </ul>
   <% end %>
 

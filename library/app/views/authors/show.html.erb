@@ -2,8 +2,7 @@
 
 <% if @author.image_url.length > 0 %>
 <p>
-  <strong>Graphic:</strong>
-  <%= @author.image_url %>
+  <%= image_tag(@author.image_url, height: "200", width: "160")%>
 </p>
 <% else %>
   <strong> no image available </strong>
@@ -43,7 +42,9 @@
 <p>
 <% @publishedBooks.each do |publishedBook| %>
 
-  <strong> <%= publishedBook.title%> </strong>
+  <span><%= image_tag(publishedBook.image_cover_url, height: "100", width: "80") %>
+        </span>
+  <strong> <%= link_to( publishedBook.title, publishedBook) %> </strong>
   </br>
 <% end %>
 </p>

@@ -2,12 +2,12 @@
      <%= form_tag books_path, :method => 'get' do %> 
        <%= text_field_tag :search, params[:search]%>
        <%= submit_tag "Search", :book => nil  %>
-       
      <% end %> 
 </span>
 
-<h1>Books</h1>
-<text id="message" name="message" type="hidden" cols="24" rows="6"><strong>Search Results</strong></text> <br>
+<h2>Books</h2>
+<span id="searchResultsTitle" style="display: none;">
+<strong>Search Results</strong></span> <br>
   <p>
   <%= page_entries_info @books %> 
   </p>
@@ -16,18 +16,17 @@
 
     <li>
       <div class="book-content-area">
-        <span><%= image_tag(book.image_cover_url, height: "100", width: "80") %></span>
-        <span class="book-title"><%= link_to(book.title, book) %></span>
+        <div class="book-image-area"><%= image_tag(book.image_cover_url, height: "100", width: "80") %>
+        </div>
+        <div class="title-author-area">
+        <span class="book-title"><%= link_to(book.title, book) %></span><br>
         <span class="by-author"> by <%= book.author %></span>
+        </div>
       </div>
     </li>
     <br>
     
   <% end %>
+  <%= paginate @books %>
   </ol>
-<%= paginate @books %>
-
-
-<%= link_to 'New Book', new_book_path %>
-
-
+ 
