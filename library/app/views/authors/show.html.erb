@@ -43,7 +43,7 @@
 <p>
 <% @publishedBooks.each do |publishedBook| %>
 
-  <strong> <%= publishedBook.title%> </strong>
+  <strong> <%= link_to( publishedBook.title, publishedBook) %> </strong>
   </br>
 <% end %>
 </p>
