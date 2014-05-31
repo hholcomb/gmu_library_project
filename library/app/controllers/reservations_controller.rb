@@ -12,7 +12,7 @@ before_action :set_book, only: [:create]
 
   # GET /reservations/overdue
   def overdue
-   @overdueset = Reservation.where( "due_on < ?", Time.zone.now )
+   @overdueset = Reservation.where( "due_on < ?", Time.zone.now  )
   end
 
   def show
@@ -33,7 +33,8 @@ before_action :set_book, only: [:create]
   def create
     user_index = params[:user_index]
     book_id = params[:book_id]
-    today = Date.today
+#    today = Date.today
+    today = Time.zone.now
     tomorrow = today +1.days
 
     @reservation = @book.reservations.new( book_id: book_id, 

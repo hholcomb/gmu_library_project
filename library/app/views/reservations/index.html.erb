@@ -1,39 +1,39 @@
-<h1>My Reservations</h1>
+<h2>My Reservations</h2>
 
 <ol id="reservations">
   <% @reservations.each do |reservation| %>
-    <l1>
+    <li>
       <span>
-	<%= reservation.user_id %>
+	<%= hidden_field_tag reservation.user_id %>
       </span>
 
       <span>
-	<%= reservation.book_id %>
+	<%= hidden_field_tag reservation.book_id %>
       </span>
 
       <span>
 	<%= image_tag(reservation.book.image_cover_url, height: "100", width: "80")%>
-      </span>
+      </span><br><br>
 
       <span class='book-title'>
-	| <%= reservation.book.title %>
-      </span>
+	<%= reservation.book.title %>
+      </span><br>
 
       <span class="date">
-          | reserved - <%= reservation.reserved_on.to_s(:short) %> 
-      </span>
+          Reserved - <%= reservation.reserved_on.to_s(:short) %> 
+      </span><br>
 
       <span class="date">
-         | due - <%= reservation.due_on.to_s(:short) %>
-      </span>
+         Due - <%= reservation.due_on.to_s(:short) %>
+      </span><br>
 
       <span>
-        | <%= button_to 'Return book', reservations_kill_path(thereservationid: reservation.id , theuserid: reservation.user_id), 
+        <%= button_to 'Return book', reservations_kill_path(thereservationid: reservation.id , theuserid: reservation.user_id), 
                  data: {confirm: 'Are you sure?' } %>
-      </span>
+      </span><br>
 
 
-     </br>
+     
     </li>
   <% end %>
 </ol>

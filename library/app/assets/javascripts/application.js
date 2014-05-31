@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+function showSearchHeader() {
+    if (!$('#search').val()) {
+        $('#searchResultsTitle').hide();
+    } else {
+        $('#searchResultsTitle').show();
+    }
+};
